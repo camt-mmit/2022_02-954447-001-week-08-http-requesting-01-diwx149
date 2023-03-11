@@ -20,6 +20,10 @@ button {
   padding-left: 10px;
   list-style: none;
 }
+.result li:hover {
+  background-color: #ffe81f;
+  cursor: grab;
+}
 .pre {
   display: flex;
   justify-content: center;
