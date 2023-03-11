@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-family: Montserrat;
+
+  & > dt {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-family: Montserrat;
+    margin-bottom: 20px;
+
+    &::after {
+      content: "::";
+      color: red;
+      flex: 1 0 auto;
+      padding-left: 1ch;
+      padding-right: 1ch;
+      text-align: center;
+    }
+  }
+  & > dd {
+    margin-left: 0px;
+  }
+}

@@ -1,0 +1,7 @@
+<div>
+  <button type="button" (click)="back()">Back</button>
+</div>
+<star-war-planet-view *ngIf="data$ | async as data  else loading" [data]="data"></star-war-planet-view>
+<ng-template #loading>
+  <div>loading...</div>
+</ng-template>
