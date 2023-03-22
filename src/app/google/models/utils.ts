@@ -1,6 +1,6 @@
 export function arrayBufferToBase64(
   buffer: ArrayBuffer,
-  safeUrl = false,
+  safeUrl = false
 ): string {
   let binary = '';
   const bytes = new Uint8Array(buffer);
@@ -24,7 +24,7 @@ export function randomString(length: number): string {
   const array = new Uint32Array(length / 2);
   crypto.getRandomValues(array);
   return Array.from(array, (dec) => ('0' + dec.toString(16)).slice(-2)).join(
-    '',
+    ''
   );
 }
 

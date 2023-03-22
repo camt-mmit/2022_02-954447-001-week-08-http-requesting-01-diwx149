@@ -8,7 +8,7 @@ export type Configuration = {
 };
 
 export const ConfigurationToken = new InjectionToken<Configuration>(
-  'Google configuration',
+  'Google configuration'
 );
 
 export type TokenData = {
@@ -47,3 +47,11 @@ export class SecurityTokenNotFound extends Error {
     super(`Security token ${securityToken} is not found or expired!!`, options);
   }
 }
+
+export interface Storage {
+  loadData<T>(key: string): Promise<T | null>;
+  storeData<T>(key: string, value: T): Promise<void>;
+  removeData(key: string): Promise<void>;
+  loadKeys(): Promise<string[]>;
+}
+export const StorageToken = new InjectionToken<Storage>('Storage Service');

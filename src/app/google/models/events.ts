@@ -58,7 +58,7 @@ export type EventResource = {
       responseStatus?: string;
       comment?: string;
       additionalGuests?: integer;
-    },
+    }
   ];
   attendeesOmitted?: boolean;
   extendedProperties?: {
@@ -90,7 +90,7 @@ export type EventResource = {
         meetingCode?: string;
         passcode?: string;
         password?: string;
-      },
+      }
     ];
     conferenceSolution?: {
       key?: {
@@ -127,7 +127,7 @@ export type EventResource = {
       {
         method?: string;
         minutes?: integer;
-      },
+      }
     ];
   };
   source?: {
@@ -141,7 +141,7 @@ export type EventResource = {
       mimeType?: string;
       iconLink?: string;
       fileId?: string;
-    },
+    }
   ];
   eventType?: string;
 };
@@ -158,7 +158,7 @@ export type EventsList = {
     {
       method?: string;
       minutes?: integer;
-    },
+    }
   ];
   nextPageToken?: string;
   nextSyncToken?: string;

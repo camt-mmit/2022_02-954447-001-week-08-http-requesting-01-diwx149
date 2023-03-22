@@ -490,13 +490,13 @@ export function parseLocation(data?: Location): Location {
 }
 
 export function parseContactGroupMembership(
-  data?: ContactGroupMembership,
+  data?: ContactGroupMembership
 ): ContactGroupMembership {
   return { ...data };
 }
 
 export function parseDomainMembership(
-  data?: DomainMembership,
+  data?: DomainMembership
 ): DomainMembership {
   return { ...data };
 }
@@ -508,13 +508,13 @@ export function parseMembership(data?: Membership): Membership {
 
   if (membership?.contactGroupMembership) {
     membership.contactGroupMembership = parseContactGroupMembership(
-      membership.contactGroupMembership,
+      membership.contactGroupMembership
     );
   }
 
   if (membership?.domainMembership) {
     membership.domainMembership = parseDomainMembership(
-      membership.domainMembership,
+      membership.domainMembership
     );
   }
 
@@ -600,22 +600,22 @@ export function parsePerson(data: Person): Person {
     ...data,
     metadata: parsePersonMetadata(data?.metadata),
     addresses: (data?.addresses || []).map((data: Address) =>
-      parseAddress(data),
+      parseAddress(data)
     ),
     ageRanges: (data?.ageRanges || []).map((data: AgeRangeType) =>
-      parseAgeRangeType(data),
+      parseAgeRangeType(data)
     ),
     biographies: (data?.biographies || []).map((data: Biography) =>
-      parseBiography(data),
+      parseBiography(data)
     ),
     birthdays: (data?.birthdays || []).map((data) => parseBirthday(data)),
     calendarUrls: (data?.calendarUrls || []).map((data) =>
-      parseCalendarUrl(data),
+      parseCalendarUrl(data)
     ),
     clientData: (data?.clientData || []).map((data) => parseClientData(data)),
     coverPhotos: (data?.coverPhotos || []).map((data) => parseCoverPhoto(data)),
     emailAddresses: (data?.emailAddresses || []).map((data) =>
-      parseEmailAddress(data),
+      parseEmailAddress(data)
     ),
     events: (data?.events || []).map((data) => parseEvent(data)),
     externalIds: (data?.externalIds || []).map((data) => parseExternalId(data)),
@@ -627,26 +627,26 @@ export function parsePerson(data: Person): Person {
     locations: (data?.locations || []).map((data) => parseLocation(data)),
     memberships: (data?.memberships || []).map((data) => parseMembership(data)),
     miscKeywords: (data?.miscKeywords || []).map((data) =>
-      parseMiscKeyword(data),
+      parseMiscKeyword(data)
     ),
     names: (data?.names || []).map((data) => parseName(data)),
     nicknames: (data?.nicknames || []).map((data) => parseNickname(data)),
     occupations: (data?.occupations || []).map((data) => parseOccupation(data)),
     organizations: (data?.organizations || []).map((data) =>
-      parseOrganization(data),
+      parseOrganization(data)
     ),
     phoneNumbers: (data?.phoneNumbers || []).map((data) =>
-      parsePhoneNumber(data),
+      parsePhoneNumber(data)
     ),
     photos: (data?.photos || []).map((data) => parsePhoto(data)),
     relations: (data?.relations || []).map((data) => parseRelation(data)),
     sipAddresses: (data?.sipAddresses || []).map((data) =>
-      parseSipAddress(data),
+      parseSipAddress(data)
     ),
     skills: (data?.skills || []).map((data) => parseSkill(data)),
     urls: (data?.urls || []).map((data) => parseUrl(data)),
     userDefined: (data?.userDefined || []).map((data) =>
-      parseUserDefined(data),
+      parseUserDefined(data)
     ),
   };
 }
@@ -662,7 +662,7 @@ export function parseConnectionsList(data: ConnectionsList): ConnectionsList {
  * Helper Functions
  */
 export function getPrimaryMetadata<T extends HasMetadata>(
-  items: T[],
+  items: T[]
 ): T | undefined {
   return items.find((item) => item?.metadata?.primary);
 }
@@ -672,13 +672,13 @@ export function displayName(names: Name[]): string | undefined {
 }
 
 export function displayEmailAddress(
-  emailAddresses: EmailAddress[],
+  emailAddresses: EmailAddress[]
 ): string | undefined {
   return getPrimaryMetadata(emailAddresses)?.value;
 }
 
 export function displayPhoneNumber(
-  phoneNumbers: PhoneNumber[],
+  phoneNumbers: PhoneNumber[]
 ): string | undefined {
   return getPrimaryMetadata(phoneNumbers)?.value;
 }
